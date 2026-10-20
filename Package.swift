@@ -4,10 +4,10 @@
 import PackageDescription
 
 /// The release whose framework archive the package is built on; the release sets it.
-let version = "0.1.0"
+let version = "0.2.0"
 
 /// The SHA-256 checksum of that archive; the release sets it with `version`.
-let checksum = "a13b748c379f2098b171c352d33e6194638ea50283d41c0c102fe6f80ac8a51b"
+let checksum = "2717f30a8bc3e77a4259b15227a2de7ceeac6b5fea4dc140237b5c2ee003c99a"
 
 /// Swift 6, and imports internal unless a file says otherwise, so no public signature can name a
 /// type of the framework underneath.

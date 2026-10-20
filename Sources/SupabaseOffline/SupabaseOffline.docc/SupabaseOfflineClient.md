@@ -35,11 +35,23 @@
 - ``dismissRejectedMutation(id:)``
 - ``syncPendingMutations(table:)``
 
+### Conflicts
+
+- ``conflictedMutations()``
+- ``resolveConflictedMutation(id:resolution:)``
+- ``dismissConflictedMutation(id:)``
+
 ### Status and the network
 
 - ``syncStatus``
 - ``disableNetwork()``
 - ``enableNetwork()``
+
+### Realtime
+
+- ``realtimeStatus``
+- ``disableRealtime()``
+- ``enableRealtime()``
 
 ### Local data
 

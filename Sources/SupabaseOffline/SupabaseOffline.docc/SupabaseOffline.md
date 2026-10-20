@@ -10,8 +10,9 @@ without a connection waits in the queue and is sent, in the order it was made, w
 comes back. Storage downloads are kept on disk and served from there offline.
 
 Calls read as supabase-swift's do: `from("todos").select().eq("done", value: false).execute()`.
-Keep supabase-swift for Auth, Realtime and Functions; the ``SupabaseOfflineClient`` takes the
-signed-in user's token from it.
+Keep supabase-swift for Auth and Functions; the ``SupabaseOfflineClient`` takes the signed-in
+user's token from it. The tables ``SupabaseOfflineClient/Config/realtimeTables`` names it keeps
+current through Realtime itself; broadcast and presence stay with supabase-swift.
 
 The testing product, `SupabaseOfflineTesting`, runs the same client in memory against a server
 your test scripts: see <doc:TestingYourApp>.
@@ -23,6 +24,7 @@ your test scripts: see <doc:TestingYourApp>.
 - <doc:GettingStarted>
 - <doc:ComingFromSupabaseSwift>
 - <doc:OfflineBehavior>
+- <doc:ResolvingConflicts>
 - <doc:HandlingErrors>
 - <doc:TestingYourApp>
 
@@ -32,6 +34,8 @@ your test scripts: see <doc:TestingYourApp>.
 - ``SupabaseOfflineClient/Config``
 - ``SupabaseOfflineClient/CacheSize``
 - ``SupabaseOfflineClient/LogLevel``
+- ``RealtimeTable``
+- ``RealtimeFilter``
 
 ### Reading
 
@@ -81,11 +85,23 @@ your test scripts: see <doc:TestingYourApp>.
 - ``RejectedMutationSequence``
 - ``SyncReport``
 
+### Conflicts
+
+- ``MutationConflict``
+- ``ConflictResolution``
+- ``ConflictedMutation``
+- ``ConflictedMutationSequence``
+
 ### Status and the network
 
 - ``SyncStatusSequence``
 - ``SyncStatus``
 - ``NetworkStatus``
+
+### Realtime
+
+- ``RealtimeStatusSequence``
+- ``RealtimeStatus``
 
 ### Errors
 
